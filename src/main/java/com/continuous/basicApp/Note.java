@@ -14,13 +14,13 @@ public class Note {
 
 	//Set these name and email to final if something fails
 	private String title;
-    private String note;
+    private String body;
      
 
-	public Note(String title, String note) {
+	public Note(String title, String body) {
 		super();
 		this.title = title;
-		this.note = note;
+		this.body = body;
 	}
 	
 	public Note() {
@@ -37,13 +37,13 @@ public class Note {
 	public String getTitle() {
 		return title;
 	}
-	public String getNote() {
-		return note;
+	public String getBody() {
+		return body;
 	}
 
     @Override
 	public String toString() {
-		return "Title [id=" + id + ", title=" + title + ", note=" + note + "]";
+		return "Title [id=" + id + ", title=" + title + ", note=" + body + "]";
 	}
 	
 }
