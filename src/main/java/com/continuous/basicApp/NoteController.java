@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
+
+//
 @RequestMapping(value = "/notes")
 
 public class NoteController {
@@ -33,22 +35,29 @@ public class NoteController {
 		return service.findById(id);
 	}
 	
-	@GetMapping(path= "/findAll")
+	//In generic methods, let the / path
+	@GetMapping(path= "/")
 	public List<Note> getNotes(){
 		return (List<Note>) service.findAll();
 	}
 
 		
-	@PostMapping(path="/createNote")
+	@PostMapping(path="/")
 	public Note addNote (@RequestBody Note note) {
 		return service.createNote(note);
 	}
 	
 
-	@PutMapping(path="/updateNote")
-	public Note updateNote(@RequestBody Note note) {
+	//Adapt id with the note.id
+	@PutMapping(path="/{id}")
+	public Note updateNote(@PathVariable(value="id")Long id, @RequestBody Note note) {
 				
-		return service.updateNote(note);
+		if(note.getId( )== id) {
+			return service.updateNote(id, note);
+
+		}else {
+			return null;
+		}
 	}
 	
 	

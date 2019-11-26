@@ -11,7 +11,7 @@ public interface NoteService {
 	
 	public List<Note> findAll();
 	
-	public Note updateNote(Note note);
+	public Note updateNote(Long id, Note note);
 	
 	public void deleteById(Long id);
 

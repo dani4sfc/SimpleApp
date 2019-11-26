@@ -27,10 +27,11 @@ public class NoteServiceImpl implements NoteService{
 		return repository.findAll();
 	}
 
+	//Update needs to bring a id in order to identify the element (visual), first parameter, the id
 	@Override
-	public Note updateNote(Note note) {
+	public Note updateNote(Long id, Note note) {
 		
-		Note current = this.findById(note.getId());
+		Note current = this.findById(id);
 		
 		if(!current.equals(null)) {
 			
