@@ -1,6 +1,8 @@
-package com.continuous.basicApp;
+package com.continuous.basicApp.service;
 
 import java.util.List;
+
+import com.continuous.basicApp.model.Note;
 
 public interface NoteService {
 

@@ -1,9 +1,12 @@
-package com.continuous.basicApp;
+package com.continuous.basicApp.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.continuous.basicApp.model.Note;
+import com.continuous.basicApp.repository.NoteRepository;
 
 @Service
 public class NoteServiceImpl implements NoteService{
